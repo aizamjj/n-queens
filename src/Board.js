@@ -77,10 +77,31 @@
     // ROWS - run from left to right
     // --------------------------------------------------------------
     //
-    // test if a specific row on this board contains a conflict
     hasRowConflictAt: function(rowIndex) {
-      return false; // fixme
-    },
+      // input: rowIndex - array
+      // output: true or false - boolean
+
+      //Checks to see if the rowIndex more than one 1 inside it.
+
+      // if given a rowIndex it will go through all of the elements within that row to see if there are more than one 1
+
+      //iterate the given index
+      rowIndex.forEach(element => {
+        // if the current element is  equal to 1, then increment count
+        var count = 0;
+        if (element === 1) {
+          count++;
+        }
+      });
+      if (count > 1) {
+        return true;
+      }
+      // check if the size of the array is more than one
+      // if so, return true, otherwise return false;
+      else {
+        return false; // fixme
+    }
+  },
 
     // test if any rows on this board contain conflicts
     hasAnyRowConflicts: function() {
