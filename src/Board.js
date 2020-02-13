@@ -86,26 +86,30 @@
       // if given a rowIndex it will go through all of the elements within that row to see if there are more than one 1
 
       //iterate the given index
-      rowIndex.forEach(element => {
+      var count = 0;
+      for (var i = 0; i < rowIndex.length; i++) {
         // if the current element is  equal to 1, then increment count
-        var count = 0;
-        if (element === 1) {
+        if (rowIndex[i] === 1) {
           count++;
         }
-      });
+      }
       if (count > 1) {
         return true;
       }
       // check if the size of the array is more than one
       // if so, return true, otherwise return false;
-      else {
-        return false; // fixme
-    }
-  },
+      return false;
+    },
 
     // test if any rows on this board contain conflicts
     hasAnyRowConflicts: function() {
-      return false; // fixme
+      // iterate over the this.attributes
+      for (var key in this.attributes) {
+        if (this.hasRowConflictAt(this.attributes[key])) {
+          return true;
+        }
+      }
+      return false;
     },
 
 
@@ -115,12 +119,13 @@
     //
     // test if a specific column on this board contains a conflict
     hasColConflictAt: function(colIndex) {
-      return false; // fixme
+
+      return false;
     },
 
     // test if any columns on this board contain conflicts
     hasAnyColConflicts: function() {
-      return false; // fixme
+      return false;
     },
 
 
